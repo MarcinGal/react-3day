@@ -20,7 +20,7 @@ class Counter extends React.Component {
     divideHandler = () => this.setState({ number: this.state.number / 2 })
 
     powerHandler = () => this.setState({ number: this.state.number * this.state.number})
-    
+
     divideItselfHandler = () => this.setState({ number: this.state.number / this.state.number})
 
     render() {
