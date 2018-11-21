@@ -7,7 +7,7 @@ import Counter from './Counter'
 const App = (props) => (
   <Paper>
     <Counter
-      startNumber={5}
+      startNumber={10}
     />
   </Paper>
 )
