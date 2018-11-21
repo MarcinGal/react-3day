@@ -1,15 +1,16 @@
 import React from 'react'
 
+import Paper from './components/Paper'
 import Button from './components/Button'
 
 class Counter extends React.Component {
     state = {
 
         otherProp: 'whatever',
-        number: this.props.startNumber
+        number: this.props.startNumber || 0
     }
 
-    initialHandler = () => this.setState({ number: this.props.startNumber })
+    initialHandler = () => this.setState({ number: this.props.startNumber || 0})
 
     incHandler = () => this.setState({ number: this.state.number + 1 })
 
@@ -25,7 +26,7 @@ class Counter extends React.Component {
 
     render() {
         return (
-            <div>
+            <Paper>
                 <h1>
                     {this.state.number}
                 </h1>
@@ -57,7 +58,7 @@ class Counter extends React.Component {
                     onClick={this.divideItselfHandler}
                     label={'divide Itself'}
                 />
-            </div>
+            </Paper>
         )
     }
 }

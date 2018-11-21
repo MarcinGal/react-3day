@@ -8,14 +8,15 @@ class Navigation extends React.Component {
         isDrawerOpen: false
     }
 
-toggleDrawer = () => this.setState({ isDrawerOpen: !this.state.isDrawerOpen })
+
+    toggleDrawer = () => this.setState({ isDrawerOpen: !this.state.isDrawerOpen })
 
     render() {
         return (
             <div>
                 <AppBar
-                    title="Bar z plackami"
                     onLeftIconButtonClick={this.toggleDrawer}
+                    title={this.props.title}
                 />
                 <Drawer
                     docked={false}
