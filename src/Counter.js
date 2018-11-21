@@ -10,6 +10,26 @@ class Counter extends React.Component {
             number: props.startNumber
         }
     }
+initialHandler(){
+    this.setState({ number: this.props.startNumber })
+}
+
+incHandler(){
+    this.setState({ number: this.state.number + 1 })
+}
+
+decHandler(){
+    this.setState({ number: this.state.number - 1 })
+}
+
+multiplyHandler(){
+    this.setState({ number: this.state.number * 2 })
+}
+
+divideHandler(){
+    this.setState({ number: this.state.number / 2 })
+}
+
     render() {
         return (
             <div>
@@ -17,23 +37,23 @@ class Counter extends React.Component {
                     {this.state.number}
                 </h1>
                 <Button
-                    onClick={() => this.setState({ number: this.props.startNumber })}
+                    onClick={() => this.initialHandler()}
                     label={'Start Number'}
                 />
                 <Button
-                    onClick={() => this.setState({ number: this.state.number + 1 })}
+                    onClick={() => this.incHandler()}
                     label={'+'}
                 />
                 <Button
-                    onClick={() => this.setState({ number: this.state.number - 1 })}
+                    onClick={() => this.decHandler()}
                     label={'-'}
                 />
                 <Button
-                    onClick={() => this.setState({ number: this.state.number * 2 })}
+                    onClick={() => this.multiplyHandler()}
                     label={'*'}
                 />
                 <Button
-                    onClick={() => this.setState({ number: this.state.number / 2 })}
+                    onClick={() => this.divideHandler()}
                     label={'/'}
                 />
             </div>
