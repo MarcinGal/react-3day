@@ -4,18 +4,24 @@ import AppBar from 'material-ui/AppBar'
 import Drawer from 'material-ui/Drawer'
 
 class Navigation extends React.Component {
+    state = {
+        isDrawerOpen: false
+    }
+
+toggleDrawer = () => this.setState({ isDrawerOpen: !this.state.isDrawerOpen })
+
     render() {
         return (
             <div>
                 <AppBar
                     title="Bar z plackami"
-                    onLeftIconButtonClick={() => alert('Clicked!')}
+                    onLeftIconButtonClick={this.toggleDrawer}
                 />
                 <Drawer
                     docked={false}
                     width={200}
-                    open={true}
-                    onRequestChange={(open) => console.log(open)}
+                    open={this.state.isDrawerOpen}
+                    onRequestChange={this.toggleDrawer}
                 >
                 </Drawer>
             </div >
