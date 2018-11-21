@@ -24,6 +24,7 @@ class Navigation extends React.Component {
                     open={this.state.isDrawerOpen}
                     onRequestChange={this.toggleDrawer}
                 >
+                {this.props.children}
                 </Drawer>
             </div >
         )
