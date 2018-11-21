@@ -1,18 +1,15 @@
 import React from 'react'
-import RaisedButton from 'material-ui/RaisedButton'
+import Button from './components/Button'
+import Paper from './components/Paper'
 
-const style = {
-  // margin: 12,
-};
 
 const App = (props) => (
-  <div>
-    <RaisedButton
-      label="Primary"
-      primary={true}
-      style={style}
-    />
-  </div>
+  <Paper>
+    <Button
+    onClick={() => alert('assdasd')}/>
+    <Button
+    onClick={() => alert('assdasd')}/>
+  </Paper>
 )
 
 export default App;
