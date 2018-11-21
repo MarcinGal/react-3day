@@ -18,7 +18,7 @@ const App = (props) => (
         </ul>
         <div>
           <Route path="/" component={Route1} />
-          <Route path="/counter" component={Counter} />
+          <Route path="/counter" component={() => <Counter startNumber={5}/> } />
         </div>
       </div>
     </Router>
