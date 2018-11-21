@@ -3,32 +3,25 @@ import React from 'react'
 import Button from './components/Button'
 
 class Counter extends React.Component {
-    constructor(props) {
-        super()
+    state = {
 
-        this.state = {
-            number: props.startNumber
-        }
+        otherProp: 'whatever',
+        number: this.props.startNumber
     }
-initialHandler(){
-    this.setState({ number: this.props.startNumber })
-}
 
-incHandler(){
-    this.setState({ number: this.state.number + 1 })
-}
+    initialHandler = () => this.setState({ number: this.props.startNumber })
 
-decHandler(){
-    this.setState({ number: this.state.number - 1 })
-}
+    incHandler = () => this.setState({ number: this.state.number + 1 })
 
-multiplyHandler(){
-    this.setState({ number: this.state.number * 2 })
-}
+    decHandler = () => this.setState({ number: this.state.number - 1 })
 
-divideHandler(){
-    this.setState({ number: this.state.number / 2 })
-}
+    multiplyHandler = () => this.setState({ number: this.state.number * 2 })
+
+    divideHandler = () => this.setState({ number: this.state.number / 2 })
+
+    powerHandler = () => this.setState({ number: this.state.number * this.state.number})
+    
+    divideItselfHandler = () => this.setState({ number: this.state.number / this.state.number})
 
     render() {
         return (
@@ -37,24 +30,32 @@ divideHandler(){
                     {this.state.number}
                 </h1>
                 <Button
-                    onClick={() => this.initialHandler()}
-                    label={'Start Number'}
+                    onClick={this.initialHandler}
+                    label={'Reset'}
                 />
                 <Button
-                    onClick={() => this.incHandler()}
+                    onClick={this.incHandler}
                     label={'+'}
                 />
                 <Button
-                    onClick={() => this.decHandler()}
+                    onClick={this.decHandler}
                     label={'-'}
                 />
                 <Button
-                    onClick={() => this.multiplyHandler()}
-                    label={'*'}
+                    onClick={this.multiplyHandler}
+                    label={'* 2'}
                 />
                 <Button
-                    onClick={() => this.divideHandler()}
-                    label={'/'}
+                    onClick={this.divideHandler}
+                    label={'/ 2'}
+                />
+                <Button
+                    onClick={this.powerHandler}
+                    label={'power'}
+                />
+                <Button
+                    onClick={this.divideItselfHandler}
+                    label={'divide Itself'}
                 />
             </div>
         )
